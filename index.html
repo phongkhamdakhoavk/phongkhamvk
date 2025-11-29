@@ -1,82 +1,209 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phòng Khám Đa Khoa</title>
-    <style>
-        body { margin:0; font-family:Arial, sans-serif; color:#222; }
-        header { background:#0a84ff; padding:20px; color:#fff; text-align:center; }
-        nav { background:#fff; padding:10px 0; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
-        nav ul { list-style:none; margin:0; padding:0; display:flex; justify-content:center; gap:30px; }
-        nav a { text-decoration:none; color:#222; font-weight:bold; }
-        .hero { background:linear-gradient(to right, #0a84ff, #44b0ff); padding:100px 20px; text-align:center; color:#fff; }
-        .hero h1 { font-size:40px; margin-bottom:10px; }
-        .hero p { font-size:18px; max-width:700px; margin:auto; }
-        .container { max-width:1100px; margin:auto; padding:40px 20px; }
-        .section-title { font-size:28px; margin-bottom:20px; text-align:center; }
-        .services { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; }
-        .service-box { padding:20px; border-radius:15px; background:#f5faff; border:1px solid #e0ecff; }
-        .service-box h3 { margin-top:0; }
-        footer { background:#0a84ff; padding:30px; text-align:center; color:#fff; margin-top:40px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phòng Khám Đa Khoa VK</title>
+<style>
+    /* Reset cơ bản */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color:#222; }
+
+    /* Header */
+    header {
+        background:#0a84ff;
+        color:#fff;
+        padding:20px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    header h1 { font-size:28px; }
+    header .hotline { font-weight:bold; font-size:18px; }
+
+    /* Nav */
+    nav {
+        background:#fff;
+        box-shadow:0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav ul {
+        list-style:none;
+        display:flex;
+        justify-content:center;
+        gap:30px;
+        padding:10px 0;
+        flex-wrap: wrap;
+    }
+    nav a { text-decoration:none; color:#222; font-weight:bold; transition: color 0.3s; }
+    nav a:hover { color:#0a84ff; }
+
+    /* Hero */
+    .hero {
+        background:linear-gradient(to right, #0a84ff, #44b0ff);
+        color:#fff;
+        text-align:center;
+        padding:120px 20px 80px;
+    }
+    .hero h1 { font-size:42px; margin-bottom:15px; }
+    .hero p { font-size:20px; max-width:700px; margin:10px auto 25px; }
+    .hero .btn { padding:12px 25px; background:#fff; color:#0a84ff; font-weight:bold; border:none; border-radius:8px; cursor:pointer; transition: background 0.3s; }
+    .hero .btn:hover { background:#f0f0f0; }
+
+    /* Container & Sections */
+    .container { max-width:1100px; margin: auto; padding:50px 20px; }
+    .section-title { font-size:32px; margin-bottom:30px; text-align:center; color:#0a84ff; }
+
+    /* Giới thiệu */
+    .about {
+        display:flex;
+        align-items:center;
+        gap:40px;
+        flex-wrap: wrap;
+    }
+    .about img { max-width:500px; width:100%; border-radius:15px; }
+
+    /* Services */
+    .services { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:25px; }
+    .service-box {
+        padding:25px;
+        border-radius:15px;
+        background:#f5faff;
+        border:1px solid #e0ecff;
+        text-align:center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-box:hover { transform: translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.1);}
+    .service-box h3 { margin-top:10px; margin-bottom:10px; color:#0a84ff; }
+
+    /* Bác sĩ */
+    .doctors { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:25px; }
+    .doctor-box { text-align:center; padding:20px; border-radius:15px; border:1px solid #e0ecff; background:#f5faff; transition: transform 0.3s;}
+    .doctor-box:hover { transform: translateY(-5px); }
+    .doctor-box img { width:100%; border-radius:15px; margin-bottom:15px; }
+    .doctor-box h4 { margin-bottom:5px; color:#0a84ff; }
+    .doctor-box p { font-size:14px; color:#555; }
+
+    /* Liên hệ */
+    .contact p { margin-bottom:10px; font-size:16px; }
+    .contact form { max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px; }
+    .contact input, .contact textarea { padding:12px; border-radius:8px; border:1px solid #ccc; font-size:16px; width:100%; }
+    .contact button { padding:12px; border:none; background:#0a84ff; color:#fff; font-size:16px; font-weight:bold; border-radius:8px; cursor:pointer; transition: background 0.3s; }
+    .contact button:hover { background:#0670d1; }
+
+    /* Footer */
+    footer {
+        background:#0a84ff;
+        color:#fff;
+        text-align:center;
+        padding:30px 20px;
+    }
+    footer a { color:#fff; text-decoration:none; margin:0 10px; }
+    footer a:hover { text-decoration:underline; }
+
+    @media(max-width:768px){
+        .about { flex-direction:column; text-align:center; }
+    }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Phòng Khám Đa Khoa</h1>
-        <p>Uy tín - Chuyên nghiệp - Tận tâm</p>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="#gioithieu">Giới thiệu</a></li>
-            <li><a href="#dichvu">Dịch vụ</a></li>
-            <li><a href="#bacsi">Đội ngũ bác sĩ</a></li>
-            <li><a href="#lienhe">Liên hệ</a></li>
-        </ul>
-    </nav>
+<header>
+    <h1>Phòng Khám Đa Khoa VK</h1>
+    <div class="hotline">Hotline: 035.685.1116</div>
+</header>
 
-    <section class="hero">
-        <h1>Chăm sóc sức khỏe toàn diện cho bạn</h1>
-        <p>Đội ngũ y bác sĩ nhiều năm kinh nghiệm cùng trang thiết bị hiện đại hàng đầu, mang lại trải nghiệm khám chữa bệnh an toàn – chất lượng – hiệu quả.</p>
-    </section>
+<nav>
+    <ul>
+        <li><a href="#gioithieu">Giới thiệu</a></li>
+        <li><a href="#dichvu">Dịch vụ</a></li>
+        <li><a href="#bacsi">Đội ngũ bác sĩ</a></li>
+        <li><a href="#lienhe">Liên hệ</a></li>
+    </ul>
+</nav>
 
-    <section id="gioithieu" class="container">
-        <h2 class="section-title">Giới thiệu phòng khám</h2>
-        <p>Phòng khám Đa Khoa cung cấp dịch vụ khám và điều trị bệnh ở nhiều chuyên khoa khác nhau như Nam khoa, Phụ khoa, Da liễu, Bệnh trĩ… Chúng tôi cam kết mang đến dịch vụ y tế chất lượng cao, thời gian linh hoạt, bảo mật thông tin tuyệt đối.</p>
-    </section>
+<section class="hero">
+    <h1>Chăm sóc sức khỏe toàn diện cho bạn</h1>
+    <p>Đội ngũ y bác sĩ nhiều năm kinh nghiệm cùng trang thiết bị hiện đại, mang lại trải nghiệm khám chữa bệnh an toàn – chất lượng – hiệu quả.</p>
+    <button class="btn">Đặt lịch khám ngay</button>
+</section>
 
-    <section id="dichvu" class="container">
-        <h2 class="section-title">Dịch vụ tiêu biểu</h2>
-        <div class="services">
-            <div class="service-box">
-                <h3>Nam Khoa</h3>
-                <p>Thăm khám và điều trị các vấn đề sinh lý, viêm nhiễm, bao quy đầu…</p>
-            </div>
-            <div class="service-box">
-                <h3>Phụ Khoa</h3>
-                <p>Khám phụ khoa, soi âm đạo, điều trị viêm nhiễm và tư vấn sức khỏe sinh sản.</p>
-            </div>
-            <div class="service-box">
-                <h3>Da Liễu</h3>
-                <p>Điều trị mụn, nấm da, viêm da, nám, tàn nhang, sẹo rỗ…</p>
-            </div>
-            <div class="service-box">
-                <h3>Bệnh Trĩ</h3>
-                <p>Khám và điều trị trĩ nội, trĩ ngoại bằng phương pháp hiện đại, ít đau.</p>
-            </div>
+<section id="gioithieu" class="container">
+    <h2 class="section-title">Giới thiệu phòng khám</h2>
+    <div class="about">
+        <img src="https://via.placeholder.com/500x350" alt="Phòng khám">
+        <p>Phòng khám Đa Khoa VK cung cấp dịch vụ khám và điều trị bệnh ở nhiều chuyên khoa khác nhau như Nam khoa, Phụ khoa, Da liễu, Bệnh trĩ… Chúng tôi cam kết mang đến dịch vụ y tế chất lượng cao, thời gian linh hoạt, bảo mật thông tin tuyệt đối. Chúng tôi luôn đặt bệnh nhân là trung tâm, chăm sóc tận tâm và chuyên nghiệp.</p>
+    </div>
+</section>
+
+<section id="dichvu" class="container">
+    <h2 class="section-title">Dịch vụ tiêu biểu</h2>
+    <div class="services">
+        <div class="service-box">
+            <img src="https://via.placeholder.com/80" alt="Nam khoa">
+            <h3>Nam Khoa</h3>
+            <p>Thăm khám và điều trị các vấn đề sinh lý, viêm nhiễm, bao quy đầu…</p>
         </div>
-    </section>
+        <div class="service-box">
+            <img src="https://via.placeholder.com/80" alt="Phụ khoa">
+            <h3>Phụ Khoa</h3>
+            <p>Khám phụ khoa, soi âm đạo, điều trị viêm nhiễm và tư vấn sức khỏe sinh sản.</p>
+        </div>
+        <div class="service-box">
+            <img src="https://via.placeholder.com/80" alt="Da liễu">
+            <h3>Da Liễu</h3>
+            <p>Điều trị mụn, nấm da, viêm da, nám, tàn nhang, sẹo rỗ…</p>
+        </div>
+        <div class="service-box">
+            <img src="https://via.placeholder.com/80" alt="Bệnh trĩ">
+            <h3>Bệnh Trĩ</h3>
+            <p>Khám và điều trị trĩ nội, trĩ ngoại bằng phương pháp hiện đại, ít đau.</p>
+        </div>
+    </div>
+</section>
 
-    <section id="lienhe" class="container">
-        <h2 class="section-title">Liên hệ</h2>
-        <p>Địa chỉ: 495 Cộng Hòa, Phường 15, Quận Tân Bình, TPHCM</p>
-        <p>Hotline: 0000 000 000</p>
-        <p>Thời gian làm việc: 8:00 - 20:00 (Tất cả các ngày)</p>
-    </section>
+<section id="bacsi" class="container">
+    <h2 class="section-title">Đội ngũ bác sĩ</h2>
+    <div class="doctors">
+        <div class="doctor-box">
+            <img src="https://via.placeholder.com/250x250" alt="Bác sĩ A">
+            <h4>BS Nguyễn Văn A</h4>
+            <p>Chuyên khoa Nam Khoa</p>
+        </div>
+        <div class="doctor-box">
+            <img src="https://via.placeholder.com/250x250" alt="Bác sĩ B">
+            <h4>BS Trần Thị B</h4>
+            <p>Chuyên khoa Phụ Khoa</p>
+        </div>
+        <div class="doctor-box">
+            <img src="https://via.placeholder.com/250x250" alt="Bác sĩ C">
+            <h4>BS Lê Văn C</h4>
+            <p>Chuyên khoa Da Liễu</p>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        © 2025 Phòng Khám Đa Khoa – All rights reserved.
-    </footer>
+<section id="lienhe" class="container contact">
+    <h2 class="section-title">Liên hệ</h2>
+    <p>Địa chỉ: 495 Cộng Hòa, Phường 15, Quận Tân Bình, TPHCM</p>
+    <p>Hotline: 035.685.1116</p>
+    <p>Thời gian làm việc: 8:00 - 20:00 (Tất cả các ngày)</p>
+
+    <form>
+        <input type="text" placeholder="Họ và tên" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Số điện thoại" required>
+        <textarea rows="5" placeholder="Nội dung" required></textarea>
+        <button type="submit">Gửi liên hệ</button>
+    </form>
+</section>
+
+<footer>
+    © 2025 Phòng Khám Đa Khoa VK – All rights reserved.
+    <div>
+        <a href="#">Facebook</a> | <a href="#">Zalo</a> | <a href="#">YouTube</a>
+    </div>
+</footer>
+
 </body>
 </html>
