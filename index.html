@@ -177,6 +177,88 @@
         <a href="#">Facebook</a> | <a href="#">Zalo</a> | <a href="#">YouTube</a>
     </div>
 </footer>
+<!-- Thêm vào cuối <body> trước </body> -->
+<section id="lienhe" class="container contact">
+    <h2 class="section-title">Liên hệ</h2>
+    <p>Địa chỉ: 495 Cộng Hòa, Phường 15, Quận Tân Bình, TPHCM</p>
+    <p>Hotline: 035.685.1116</p>
+    <p>Thời gian làm việc: 8:00 - 20:00 (Tất cả các ngày)</p>
+
+    <!-- Form liên hệ -->
+    <form id="contactForm">
+        <input type="text" name="name" placeholder="Họ và tên" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="phone" placeholder="Số điện thoại" required>
+        <textarea name="message" rows="5" placeholder="Nội dung" required></textarea>
+        <button type="submit">Gửi liên hệ</button>
+        <p id="formMessage" style="color:green; display:none; margin-top:10px;">Gửi thành công!</p>
+    </form>
+
+    <!-- Google Map -->
+    <div style="margin-top:30px;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.123456!2d106.666!3d10.802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528c1!2sPh%C3%B2ng%20Kh%C3%A1m%20%C4%90a%20Khoa%20VK!5e0!3m2!1svi!2s!4v1700000000!5m2!1svi!2s" 
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+<!-- Back to top button -->
+<button id="backToTop" style="
+    position:fixed;
+    bottom:40px;
+    right:40px;
+    padding:15px;
+    font-size:18px;
+    border:none;
+    border-radius:50%;
+    background:#0a84ff;
+    color:#fff;
+    cursor:pointer;
+    display:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+">↑</button>
+
+<script>
+    // Scroll animation - fade in
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold:0.2 });
+
+    sections.forEach(section => {
+        section.style.opacity = 0;
+        section.style.transform = 'translateY(50px)';
+        section.style.transition = 'all 0.8s ease-out';
+        observer.observe(section);
+    });
+
+    // Back to top button
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 300) backBtn.style.display = 'block';
+        else backBtn.style.display = 'none';
+    });
+    backBtn.addEventListener('click', () => {
+        window.scrollTo({ top:0, behavior:'smooth' });
+    });
+
+    // Form gửi email (demo)
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMessage');
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+        // Bạn có thể thay ajax gửi lên server
+        msg.style.display = 'block';
+        form.reset();
+    });
+</script>
 
 </body>
 </html>
+
