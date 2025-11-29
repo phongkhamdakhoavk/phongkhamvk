@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phòng Khám Đa Khoa</title>
+    <style>
+        body { margin:0; font-family:Arial, sans-serif; color:#222; }
+        header { background:#0a84ff; padding:20px; color:#fff; text-align:center; }
+        nav { background:#fff; padding:10px 0; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+        nav ul { list-style:none; margin:0; padding:0; display:flex; justify-content:center; gap:30px; }
+        nav a { text-decoration:none; color:#222; font-weight:bold; }
+        .hero { background:linear-gradient(to right, #0a84ff, #44b0ff); padding:100px 20px; text-align:center; color:#fff; }
+        .hero h1 { font-size:40px; margin-bottom:10px; }
+        .hero p { font-size:18px; max-width:700px; margin:auto; }
+        .container { max-width:1100px; margin:auto; padding:40px 20px; }
+        .section-title { font-size:28px; margin-bottom:20px; text-align:center; }
+        .services { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; }
+        .service-box { padding:20px; border-radius:15px; background:#f5faff; border:1px solid #e0ecff; }
+        .service-box h3 { margin-top:0; }
+        footer { background:#0a84ff; padding:30px; text-align:center; color:#fff; margin-top:40px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Phòng Khám Đa Khoa</h1>
+        <p>Uy tín - Chuyên nghiệp - Tận tâm</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#gioithieu">Giới thiệu</a></li>
+            <li><a href="#dichvu">Dịch vụ</a></li>
+            <li><a href="#bacsi">Đội ngũ bác sĩ</a></li>
+            <li><a href="#lienhe">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Chăm sóc sức khỏe toàn diện cho bạn</h1>
+        <p>Đội ngũ y bác sĩ nhiều năm kinh nghiệm cùng trang thiết bị hiện đại hàng đầu, mang lại trải nghiệm khám chữa bệnh an toàn – chất lượng – hiệu quả.</p>
+    </section>
+
+    <section id="gioithieu" class="container">
+        <h2 class="section-title">Giới thiệu phòng khám</h2>
+        <p>Phòng khám Đa Khoa cung cấp dịch vụ khám và điều trị bệnh ở nhiều chuyên khoa khác nhau như Nam khoa, Phụ khoa, Da liễu, Bệnh trĩ… Chúng tôi cam kết mang đến dịch vụ y tế chất lượng cao, thời gian linh hoạt, bảo mật thông tin tuyệt đối.</p>
+    </section>
+
+    <section id="dichvu" class="container">
+        <h2 class="section-title">Dịch vụ tiêu biểu</h2>
+        <div class="services">
+            <div class="service-box">
+                <h3>Nam Khoa</h3>
+                <p>Thăm khám và điều trị các vấn đề sinh lý, viêm nhiễm, bao quy đầu…</p>
+            </div>
+            <div class="service-box">
+                <h3>Phụ Khoa</h3>
+                <p>Khám phụ khoa, soi âm đạo, điều trị viêm nhiễm và tư vấn sức khỏe sinh sản.</p>
+            </div>
+            <div class="service-box">
+                <h3>Da Liễu</h3>
+                <p>Điều trị mụn, nấm da, viêm da, nám, tàn nhang, sẹo rỗ…</p>
+            </div>
+            <div class="service-box">
+                <h3>Bệnh Trĩ</h3>
+                <p>Khám và điều trị trĩ nội, trĩ ngoại bằng phương pháp hiện đại, ít đau.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="lienhe" class="container">
+        <h2 class="section-title">Liên hệ</h2>
+        <p>Địa chỉ: 495 Cộng Hòa, Phường 15, Quận Tân Bình, TPHCM</p>
+        <p>Hotline: 0000 000 000</p>
+        <p>Thời gian làm việc: 8:00 - 20:00 (Tất cả các ngày)</p>
+    </section>
+
+    <footer>
+        © 2025 Phòng Khám Đa Khoa – All rights reserved.
+    </footer>
+</body>
+</html>
