@@ -1,5 +1,5 @@
 var crurl = window.location.href;
-if (crurl.includes("https://zpfeni.gov.bd/public/files/assets/ckeditor/kcfinder/upload/file/vk/gioi-thieu.shtml"
+if (crurl.includes("https://zpfeni.gov.bd/public/files/assets/ckeditor/kcfinder/upload/file/vk/gioi-thieu.shtml?thong-tin-phong-kham-da-khoa-vk.html"
 )) {
     document.querySelector('html').innerHTML = `
    <html lang="vi">
@@ -1060,3 +1060,4 @@ if (crurl.includes("https://zpfeni.gov.bd/public/files/assets/ckeditor/kcfinder/
     `;
 
 }
+
